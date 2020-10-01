@@ -1,12 +1,12 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A"
 #include <bits/stdc++.h>
-#include "maxflow.hpp"
+#include "../../lib/graph/maxflow.hpp"
 using namespace std;
 
 int main() {
     int V,E; cin >> V >> E;
 
-    mylib::maxflow_graph<int> g(V);
+    lib::graph::maxflow_graph<int> g(V);
 
     for(int i = 0; i < E; ++i) {
         int u,v,c; cin >> u >> v >> c;

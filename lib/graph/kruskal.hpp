@@ -1,10 +1,10 @@
-#ifndef MYLIB_KRUSKAL_HPP
-#define MYLIB_KRUSKAL_HPP 1
+#ifndef LIB_GRAPH_KRUSKAL_HPP
+#define LIB_GRAPH_KRUSKAL_HPP 1
 
 #include <bits/stdc++.h>
 #include "unionfind.hpp"
 
-namespace mylib {
+namespace lib::graph {
 
 template <class Cost> struct kruskal_graph {
   public:
@@ -17,7 +17,7 @@ template <class Cost> struct kruskal_graph {
     }
 
     Cost kruskal() {
-        mylib::unionfind uf(_n);
+        lib::unionfind uf(_n);
         Cost cost = 0;
         std::sort(edges.begin(), edges.end());
 
@@ -41,6 +41,6 @@ template <class Cost> struct kruskal_graph {
     std::vector<_edge> edges;
 };
 
-}  // namespace mylib
+}  // namespace lib::graph
 
-#endif  // MYLIB_KRUSKAL_HPP
+#endif  // LIB_GRAPH_KRUSKAL_HPP

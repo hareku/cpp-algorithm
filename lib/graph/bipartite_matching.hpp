@@ -1,10 +1,10 @@
-#ifndef MYLIB_BIPARTITE_MATCHING_HPP
-#define MYLIB_BIPARTITE_MATCHING_HPP 1
+#ifndef LIB_GRAPH_BIPARTITE_MATCHING_HPP
+#define LIB_GRAPH_BIPARTITE_MATCHING_HPP 1
 
 #include <bits/stdc++.h>
 #include "maxflow.hpp"
 
-namespace mylib {
+namespace lib::graph {
 
 struct bipartite_matching_graph {
   public:
@@ -40,9 +40,9 @@ struct bipartite_matching_graph {
   private:
     int _l, _r;
     int _s, _t;
-    mylib::maxflow_graph<int> mf_graph;
+    lib::maxflow_graph<int> mf_graph;
 };
 
-}  // namespace mylib
+}  // namespace lib::graph
 
-#endif  // MYLIB_BIPARTITE_MATCHING_HPP
+#endif  // LIB_GRAPH_BIPARTITE_MATCHING_HPP

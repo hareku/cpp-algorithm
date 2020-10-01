@@ -1,9 +1,9 @@
-#ifndef MYLIB_DIJKSTRA_HPP
-#define MYLIB_DIJKSTRA_HPP 1
+#ifndef LIB_GRAPH_DIJKSTRA_HPP
+#define LIB_GRAPH_DIJKSTRA_HPP 1
 
 #include <bits/stdc++.h>
 
-namespace mylib {
+namespace lib::graph {
 
 template <class Cost> struct dijkstra_graph {
   public:
@@ -68,6 +68,6 @@ template <class Cost> struct dijkstra_graph {
     std::vector<std::vector<_edge>> g;
 };
 
-}  // namespace mylib
+}  // namespace lib::graph
 
-#endif  // MYLIB_DIJKSTRA_HPP
+#endif  // LIB_GRAPH_DIJKSTRA_HPP

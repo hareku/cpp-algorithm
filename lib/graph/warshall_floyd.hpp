@@ -1,9 +1,9 @@
-#ifndef MYLIB_WARSHALL_FLOYD_HPP
-#define MYLIB_WARSHALL_FLOYD_HPP 1
+#ifndef LIB_GRAPH_WARSHALL_FLOYD_HPP
+#define LIB_GRAPH_WARSHALL_FLOYD_HPP 1
 
 #include <bits/stdc++.h>
 
-namespace mylib {
+namespace lib::graph {
 
 template <class Cost> struct warshall_floyd_graph {
   public:
@@ -45,6 +45,6 @@ template <class Cost> struct warshall_floyd_graph {
     std::vector<std::vector<Cost>> g;
 };
 
-}  // namespace mylib
+}  // namespace lib::graph
 
-#endif  // MYLIB_WARSHALL_FLOYD_HPP
+#endif  // LIB_GRAPH_WARSHALL_FLOYD_HPP

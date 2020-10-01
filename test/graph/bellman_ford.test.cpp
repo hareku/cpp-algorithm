@@ -1,13 +1,13 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B"
 #include <bits/stdc++.h>
-#include "bellman_ford.hpp"
+#include "../../lib/graph/bellman_ford.hpp"
 using namespace std;
 
 int main() {
     int N,M; cin >> N >> M;
     int r; cin >> r;
 
-    mylib::bellman_ford_graph<long long> g(N);
+    lib::graph::bellman_ford_graph<long long> g(N);
 
     for(int i = 0; i < M; ++i) {
         int s,t;

@@ -1,9 +1,9 @@
-#ifndef MYLIB_TOPOLOGICAL_SORT_HPP
-#define MYLIB_TOPOLOGICAL_SORT_HPP 1
+#ifndef LIB_GRAPH_TOPOLOGICAL_SORT_HPP
+#define LIB_GRAPH_TOPOLOGICAL_SORT_HPP 1
 
 #include <bits/stdc++.h>
 
-namespace mylib {
+namespace lib::graph {
 
 struct topological_sort_graph {
   public:
@@ -53,6 +53,6 @@ struct topological_sort_graph {
     std::vector<int> indegree;
 };
 
-}  // namespace mylib
+}  // namespace lib::graph
 
-#endif  // MYLIB_TOPOLOGICAL_SORT_HPP
+#endif  // LIB_GRAPH_TOPOLOGICAL_SORT_HPP

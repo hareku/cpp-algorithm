@@ -1,9 +1,9 @@
-#ifndef MYLIB_MAXFLOW_HPP
-#define MYLIB_MAXFLOW_HPP 1
+#ifndef LIB_GRAPH_MAXFLOW_HPP
+#define LIB_GRAPH_MAXFLOW_HPP 1
 
 #include <bits/stdc++.h>
 
-namespace mylib {
+namespace lib::graph {
 
 template <class Cap> struct maxflow_graph {
   public:
@@ -140,6 +140,6 @@ template <class Cap> struct maxflow_graph {
     std::vector<std::vector<_edge>> g;
 };
 
-}  // namespace mylib
+}  // namespace lib::graph
 
-#endif  // MYLIB_MAXFLOW_HPP
+#endif  // LIB_GRAPH_MAXFLOW_HPP

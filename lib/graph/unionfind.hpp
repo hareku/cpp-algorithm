@@ -1,11 +1,11 @@
-#ifndef MYLIB_UNIONFIND_HPP
-#define MYLIB_UNIONFIND_HPP 1
+#ifndef LIB_GRAPH_UNIONFIND_HPP
+#define LIB_GRAPH_UNIONFIND_HPP 1
 
 #include <algorithm>
 #include <cassert>
 #include <vector>
 
-namespace mylib {
+namespace lib::graph {
 
 struct unionfind {
   public:
@@ -67,6 +67,6 @@ struct unionfind {
     std::vector<int> parent_or_size;
 };
 
-}  // namespace mylib
+}  // namespace lib::graph
 
-#endif  // MYLIB_UNIONFIND_HPP
+#endif  // LIB_GRAPH_UNIONFIND_HPP

@@ -1,9 +1,9 @@
-#ifndef MYLIB_MATH_HPP
-#define MYLIB_MATH_HPP 1
+#ifndef LIB_MATH_DIVISORS_HPP
+#define LIB_MATH_DIVISORS_HPP 1
 
 #include <bits/stdc++.h>
 
-namespace mylib {
+namespace lib::math {
 
 // Enumerate divisors of "x"
 // O(sqrt(N))
@@ -22,6 +22,6 @@ std::vector<long long> divisors(long long x) {
     return res;
 }
 
-}  // namespace mylib
+}  // namespace lib::math
 
-#endif  // MYLIB_MATH_HPP
+#endif  // LIB_MATH_DIVISORS_HPP

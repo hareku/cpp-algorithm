@@ -1,12 +1,12 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A"
 #include <bits/stdc++.h>
-#include "tree_diameter.hpp"
+#include "../../lib/graph/tree_diameter.hpp"
 using namespace std;
 
 int main() {
     int N; cin >> N;
 
-    mylib::tree_diameter_graph<int> g(N);
+    lib::graph::tree_diameter_graph<int> g(N);
 
     for(int i = 0; i < N - 1; ++i) {
         int a,b; cin >> a >> b;

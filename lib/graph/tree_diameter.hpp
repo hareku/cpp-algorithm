@@ -1,9 +1,9 @@
-#ifndef MYLIB_TREE_DIAMETER_HPP
-#define MYLIB_TREE_DIAMETER_HPP 1
+#ifndef LIB_GRAPH_TREE_DIAMETER_HPP
+#define LIB_GRAPH_TREE_DIAMETER_HPP 1
 
 #include <bits/stdc++.h>
 
-namespace mylib {
+namespace lib::graph {
 
 template <class Cost> struct tree_diameter_graph {
   public:
@@ -66,6 +66,6 @@ template <class Cost> struct tree_diameter_graph {
     std::vector<std::vector<_edge>> g;
 };
 
-}  // namespace mylib
+}  // namespace lib::graph
 
-#endif  // MYLIB_TREE_DIAMETER_HPP
+#endif  // LIB_GRAPH_TREE_DIAMETER_HPP

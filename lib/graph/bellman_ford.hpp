@@ -1,9 +1,9 @@
-#ifndef MYLIB_BELLMAN_FORD_HPP
-#define MYLIB_BELLMAN_FORD_HPP 1
+#ifndef LIB_GRAPH_BELLMAN_FORD_HPP
+#define LIB_GRAPH_BELLMAN_FORD_HPP 1
 
 #include <bits/stdc++.h>
 
-namespace mylib {
+namespace lib::graph {
 
 template <class Cost> struct bellman_ford_graph {
   public:
@@ -43,6 +43,6 @@ template <class Cost> struct bellman_ford_graph {
     std::vector<_edge> edges;
 };
 
-}  // namespace mylib
+}  // namespace lib::graph
 
-#endif  // MYLIB_BELLMAN_FORD_HPP
+#endif  // LIB_GRAPH_BELLMAN_FORD_HPP

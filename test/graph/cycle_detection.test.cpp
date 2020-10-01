@@ -1,12 +1,12 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/cycle_detection"
 #include <bits/stdc++.h>
-#include "cycle_detection.hpp"
+#include "../../lib/graph/cycle_detection.hpp"
 using namespace std;
 
 int main() {
     int N,M; cin >> N >> M;
 
-    mylib::cycle_detection_graph g(N);
+    lib::graph::cycle_detection_graph g(N);
 
     std::unordered_map<int, std::unordered_map<int, int>> ids;
     for(int i = 0; i < M; ++i) {

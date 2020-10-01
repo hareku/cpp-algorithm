@@ -1,12 +1,12 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/bipartitematching"
 #include <bits/stdc++.h>
-#include "bipartite_matching.hpp"
+#include "../../lib/graph/bipartite_matching.hpp"
 using namespace std;
 
 int main() {
     int L,R,M; cin >> L >> R >> M;
 
-    mylib::bipartite_matching_graph g(L, R);
+    lib::graph::bipartite_matching_graph g(L, R);
 
     for(int i = 0; i < M; ++i) {
         int a,b; cin >> a >> b;

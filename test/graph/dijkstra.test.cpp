@@ -1,13 +1,13 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
 #include <bits/stdc++.h>
-#include "dijkstra.hpp"
+#include "../../lib/graph/dijkstra.hpp"
 using namespace std;
 
 int main() {
     int N,M; cin >> N >> M;
     int s,t; cin >> s >> t;
 
-    mylib::dijkstra_graph<long long> dg(N);
+    lib::graph::dijkstra_graph<long long> dg(N);
 
     for(int i = 0; i < M; ++i) {
         int a,b; cin >> a >> b;

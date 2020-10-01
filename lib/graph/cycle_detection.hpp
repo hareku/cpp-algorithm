@@ -1,9 +1,9 @@
-#ifndef MYLIB_CYCLE_DETECTION_HPP
-#define MYLIB_CYCLE_DETECTION_HPP 1
+#ifndef LIB_GRAPH_CYCLE_DETECTION_HPP
+#define LIB_GRAPH_CYCLE_DETECTION_HPP 1
 
 #include <bits/stdc++.h>
 
-namespace mylib {
+namespace lib::graph {
 
 struct cycle_detection_graph {
   public:
@@ -73,6 +73,6 @@ struct cycle_detection_graph {
     std::vector<std::vector<_edge>> g;
 };
 
-}  // namespace mylib
+}  // namespace lib::graph
 
-#endif  // MYLIB_CYCLE_DETECTION_HPP
+#endif  // LIB_GRAPH_CYCLE_DETECTION_HPP

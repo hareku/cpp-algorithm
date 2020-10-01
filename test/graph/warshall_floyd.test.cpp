@@ -1,13 +1,13 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C"
 #include <bits/stdc++.h>
-#include "warshall_floyd.hpp"
+#include "../../lib/graph/warshall_floyd.hpp"
 using namespace std;
 
 int main() {
     int N,M; cin >> N >> M;
 
     long long inf = (1LL << 60);
-    mylib::warshall_floyd_graph<long long> g(N, inf);
+    lib::graph::warshall_floyd_graph<long long> g(N, inf);
 
     for(int i = 0; i < M; ++i) {
         int a,b; cin >> a >> b;

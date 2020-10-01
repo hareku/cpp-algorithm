@@ -1,12 +1,12 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
 #include <bits/stdc++.h>
-#include "unionfind.hpp"
+#include "../../lib/graph/unionfind.hpp"
 using namespace std;
 
 int main() {
     int N,Q; cin >> N >> Q;
 
-    mylib::unionfind uf(N);
+    lib::graph::unionfind uf(N);
 
     for(int i = 0; i < Q; ++i) {
         int t; cin >> t;
