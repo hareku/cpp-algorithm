@@ -1,3 +1,6 @@
+#ifndef MYLIB_UNIONFIND_HPP
+#define MYLIB_UNIONFIND_HPP 1
+
 #include <algorithm>
 #include <cassert>
 #include <vector>
@@ -65,3 +68,5 @@ struct unionfind {
 };
 
 }  // namespace mylib
+
+#endif  // MYLIB_UNIONFIND_HPP

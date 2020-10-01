@@ -1,3 +1,6 @@
+#ifndef MYLIB_CYCLE_DETECTION_HPP
+#define MYLIB_CYCLE_DETECTION_HPP 1
+
 #include <bits/stdc++.h>
 
 namespace mylib {
@@ -71,3 +74,5 @@ struct cycle_detection_graph {
 };
 
 }  // namespace mylib
+
+#endif  // MYLIB_CYCLE_DETECTION_HPP

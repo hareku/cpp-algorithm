@@ -1,3 +1,6 @@
+#ifndef MYLIB_MATH_HPP
+#define MYLIB_MATH_HPP 1
+
 #include <bits/stdc++.h>
 
 namespace mylib {
@@ -20,3 +23,5 @@ std::vector<long long> divisors(long long x) {
 }
 
 }  // namespace mylib
+
+#endif  // MYLIB_MATH_HPP

@@ -1,3 +1,6 @@
+#ifndef MYLIB_KRUSKAL_HPP
+#define MYLIB_KRUSKAL_HPP 1
+
 #include <bits/stdc++.h>
 #include "unionfind.hpp"
 
@@ -39,3 +42,5 @@ template <class Cost> struct kruskal_graph {
 };
 
 }  // namespace mylib
+
+#endif  // MYLIB_KRUSKAL_HPP

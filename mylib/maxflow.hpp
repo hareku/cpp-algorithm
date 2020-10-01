@@ -1,3 +1,6 @@
+#ifndef MYLIB_MAXFLOW_HPP
+#define MYLIB_MAXFLOW_HPP 1
+
 #include <bits/stdc++.h>
 
 namespace mylib {
@@ -138,3 +141,5 @@ template <class Cap> struct maxflow_graph {
 };
 
 }  // namespace mylib
+
+#endif  // MYLIB_MAXFLOW_HPP

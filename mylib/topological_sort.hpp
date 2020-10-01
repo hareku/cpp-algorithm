@@ -1,3 +1,6 @@
+#ifndef MYLIB_TOPOLOGICAL_SORT_HPP
+#define MYLIB_TOPOLOGICAL_SORT_HPP 1
+
 #include <bits/stdc++.h>
 
 namespace mylib {
@@ -51,3 +54,5 @@ struct topological_sort_graph {
 };
 
 }  // namespace mylib
+
+#endif  // MYLIB_TOPOLOGICAL_SORT_HPP

@@ -1,3 +1,6 @@
+#ifndef MYLIB_BIPARTITE_MATCHING_HPP
+#define MYLIB_BIPARTITE_MATCHING_HPP 1
+
 #include <bits/stdc++.h>
 #include "maxflow.hpp"
 
@@ -41,3 +44,5 @@ struct bipartite_matching_graph {
 };
 
 }  // namespace mylib
+
+#endif  // MYLIB_BIPARTITE_MATCHING_HPP

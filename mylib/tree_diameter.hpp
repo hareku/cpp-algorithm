@@ -1,3 +1,6 @@
+#ifndef MYLIB_TREE_DIAMETER_HPP
+#define MYLIB_TREE_DIAMETER_HPP 1
+
 #include <bits/stdc++.h>
 
 namespace mylib {
@@ -64,3 +67,5 @@ template <class Cost> struct tree_diameter_graph {
 };
 
 }  // namespace mylib
+
+#endif  // MYLIB_TREE_DIAMETER_HPP

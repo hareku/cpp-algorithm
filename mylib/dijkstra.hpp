@@ -1,3 +1,6 @@
+#ifndef MYLIB_DIJKSTRA_HPP
+#define MYLIB_DIJKSTRA_HPP 1
+
 #include <bits/stdc++.h>
 
 namespace mylib {
@@ -66,3 +69,5 @@ template <class Cost> struct dijkstra_graph {
 };
 
 }  // namespace mylib
+
+#endif  // MYLIB_DIJKSTRA_HPP

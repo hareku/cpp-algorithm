@@ -1,3 +1,6 @@
+#ifndef MYLIB_WARSHALL_FLOYD_HPP
+#define MYLIB_WARSHALL_FLOYD_HPP 1
+
 #include <bits/stdc++.h>
 
 namespace mylib {
@@ -43,3 +46,5 @@ template <class Cost> struct warshall_floyd_graph {
 };
 
 }  // namespace mylib
+
+#endif  // MYLIB_WARSHALL_FLOYD_HPP
