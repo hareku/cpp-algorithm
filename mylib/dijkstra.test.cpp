@@ -33,7 +33,7 @@ int main() {
     }
 
     cout << dist[t] << " " << ans.size() << endl;
-    for(int i = (int)ans.size(); i >= 0; --i) {
+    for(int i = (int)ans.size() - 1; i >= 0; --i) {
         cout << ans[i].first << " " << ans[i].second << endl;
     }
     return 0;
