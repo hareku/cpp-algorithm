@@ -8,12 +8,12 @@ namespace lib::graph {
 template <class Cost> struct warshall_floyd_graph {
   public:
     warshall_floyd_graph() : _n(0) {}
-    warshall_floyd_graph(int n, Cost inf) : _n(n), _inf(inf), g(n, std::vector<Cost>(n, inf)) {}
+    warshall_floyd_graph(int n) : _n(n), _inf(std::numeric_limits<Cost>::max()), g(n, std::vector<Cost>(n, _inf)) {}
 
     void update_edge(int from, int to, Cost cost) {
         assert(0 <= from && from < _n);
         assert(0 <= to && to < _n);
-        g[from][to] = cost;
+        g[from][to] = min(g[from][to], cost);
     }
 
     std::pair<bool, std::vector<std::vector<Cost>>> warshall_floyd() {
@@ -37,6 +37,10 @@ template <class Cost> struct warshall_floyd_graph {
         }
 
         return std::make_pair(true, res);
+    }
+
+    Cost inf() {
+        return _inf;
     }
 
   private:
