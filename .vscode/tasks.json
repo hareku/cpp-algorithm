@@ -7,8 +7,6 @@
             "command": "g++",
             "args": [
                 "main.cpp",
-                "-o",
-                "main.out",
                 "-std=c++14",
                 "-I",
                 "./ac-library",
