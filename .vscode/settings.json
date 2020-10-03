@@ -74,6 +74,7 @@
         "charconv": "cpp",
         "optional": "cpp",
         "string_view": "cpp",
-        "internal_queue": "cpp"
+        "internal_queue": "cpp",
+        "modint": "cpp"
     }
 }
