@@ -7,7 +7,7 @@ using namespace std;
 // const long long MOD = 998244353;
 
 int main() {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
+    std::cin.tie(0);
+    std::ios_base::sync_with_stdio(false);
 
 }
