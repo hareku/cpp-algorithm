@@ -40,7 +40,7 @@ struct bipartite_matching_graph {
   private:
     int _l, _r;
     int _s, _t;
-    lib::maxflow_graph<int> mf_graph;
+    lib::graph::maxflow_graph<int> mf_graph;
 };
 
 }  // namespace lib::graph
