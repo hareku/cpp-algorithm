@@ -1,5 +1,5 @@
-#ifndef LIB_LIS_HPP
-#define LIB_LIS_HPP 1
+#ifndef LIB_SEQUENCE_LIS_HPP
+#define LIB_SEQUENCE_LIS_HPP 1
 
 #include <bits/stdc++.h>
 
@@ -24,4 +24,4 @@ template <class T> int lis(std::vector<T>& a, bool broad = true) {
 
 }  // namespace lib::sequence
 
-#endif  // LIB_LIS_HPP
+#endif  // LIB_SEQUENCE_LIS_HPP
