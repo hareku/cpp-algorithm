@@ -16,11 +16,10 @@ int main() {
     }
 
     auto result = dg.dijkstra(s);
-    auto seen = get<0>(result);
-    auto dist = get<1>(result);
-    auto from = get<2>(result);
+    auto& dist = result.first;
+    auto& from = result.second;
 
-    if(!seen[t]) {
+    if(dist[t] == -1) {
         cout << -1 << endl;
         return 0;
     }
