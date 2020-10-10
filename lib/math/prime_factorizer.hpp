@@ -7,7 +7,7 @@ namespace lib::math {
 
 struct prime_factorizer {
   public:
-    // O(sqrt(N))
+    // O(N)
     prime_factorizer(long long n) : _n(n) {
         init();
     }
@@ -42,7 +42,7 @@ struct prime_factorizer {
         is_p.resize(_n + 1, true);
         is_p[0] = is_p[1] = false;
 
-        for (long long a = 2; a * a <= _n; ++a) {
+        for (long long a = 2; a <= _n; ++a) {
             if(!is_p[a]) continue;
 
             primes.insert(a);
