@@ -6,8 +6,8 @@ using namespace std;
 int main() {
     int N,M; cin >> N >> M;
 
-    long long inf = (1LL << 60);
-    lib::graph::warshall_floyd_graph<long long> g(N, inf);
+    lib::graph::warshall_floyd_graph<long long> g(N);
+    long long inf = g.inf();
 
     for(int i = 0; i < M; ++i) {
         int a,b; cin >> a >> b;

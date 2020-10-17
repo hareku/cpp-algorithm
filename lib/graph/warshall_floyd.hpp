@@ -13,7 +13,7 @@ template <class Cost> struct warshall_floyd_graph {
     void update_edge(int from, int to, Cost cost) {
         assert(0 <= from && from < _n);
         assert(0 <= to && to < _n);
-        g[from][to] = min(g[from][to], cost);
+        g[from][to] = std::min(g[from][to], cost);
     }
 
     std::pair<bool, std::vector<std::vector<Cost>>> warshall_floyd() {
