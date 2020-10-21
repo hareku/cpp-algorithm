@@ -17,7 +17,7 @@ template <class Cost> struct kruskal_graph {
     }
 
     Cost kruskal() {
-        lib::unionfind uf(_n);
+        lib::graph::unionfind uf(_n);
         Cost cost = 0;
         std::sort(edges.begin(), edges.end());
 
