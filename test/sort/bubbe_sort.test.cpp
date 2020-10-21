@@ -1,17 +1,25 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0167"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_2_A"
 #include <bits/stdc++.h>
 #include "../../lib/sort/bubble_sort.hpp"
 using namespace std;
 
 int main() {
-    int N;
-    while(cin >> N, N) {
-        vector<int> A(N);
-        for(int i = 0; i < N; ++i) cin >> A[i];
+    int N; cin >> N;
+    vector<int> A(N);
+    for(int i = 0; i < N; ++i) cin >> A[i];
 
-        int res = lib::sort::bubble_sort(A);
-        cout << res << endl;
+    int swap_count = lib::sort::bubble_sort(A);
+
+    for(int i = 0; i < N; ++i) {
+        cout << A[i];
+        if(i == N - 1) {
+            cout << endl;
+        } else {
+            cout << " ";
+        }
     }
+
+    cout << swap_count << endl;
 
     return 0;
 }
