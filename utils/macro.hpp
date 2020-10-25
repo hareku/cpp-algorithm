@@ -35,4 +35,9 @@ void yesorno(bool flag) {
 template<typename T> T ceil_int(T A, T B) {
     return (A + (B - T(1))) / B;
 }
-
+bool overflow_ifadd(long long a, long long b) {
+    return (LLONG_MAX - a) < b;
+}
+bool overflow_ifmul(long long a, long long b) {
+    return LLONG_MAX / a < b;
+}
