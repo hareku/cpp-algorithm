@@ -7,6 +7,9 @@ You can easily start with [VSCode Remote Container](https://code.visualstudio.co
 If you develop locally, install some dependencies. Check out [Dockerfile](.devcontainer/Dockerfile).
 
 ```bash
+# clone
+$ git clone --recurse-submodules https://github.com/hareku/cpp-algorithm
+
 # create main.cpp
 $ cp main.template.cpp main.cpp
 
