@@ -2,6 +2,10 @@
 
 ## Setup
 
+You can easily start with [VSCode Remote Container](https://code.visualstudio.com/docs/remote/containers).
+
+If you develop locally, install some dependencies. Check out [Dockerfile](.devcontainer/Dockerfile).
+
 ```bash
 # create main.cpp
 $ cp main.template.cpp main.cpp
