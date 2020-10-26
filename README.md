@@ -2,14 +2,22 @@
 
 ## Setup
 
-You can easily start with [VSCode Remote Container](https://code.visualstudio.com/docs/remote/containers).
-
-If you develop locally, install some dependencies. Check out [Dockerfile](.devcontainer/Dockerfile).
+### 1. Clone this repository
 
 ```bash
-# clone
+# clone with submodules
 $ git clone --recurse-submodules https://github.com/hareku/cpp-algorithm
+```
 
+### 2. Open with `VSCode Remote Container` or Install dependencies
+
+You can easily start with [VSCode Remote Container](https://code.visualstudio.com/docs/remote/containers) without installing dependencies.
+
+If you develop locally or want to use other editors, install some dependencies. Check out [Dockerfile](.devcontainer/Dockerfile).
+
+### 3. Build `main.cpp` and run it
+
+```bash
 # create main.cpp
 $ cp main.template.cpp main.cpp
 
