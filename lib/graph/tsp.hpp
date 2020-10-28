@@ -17,7 +17,7 @@ template <class Cost> struct tsp_graph {
         g[from][to] = std::min(g[from][to], cost);
     }
 
-    std::pair<bool, Cost> tsp(int s) {
+    std::pair<bool, Cost> tsp(int s, bool return_s = true) {
         assert(0 <= s && s < _n);
         int size = 1 << _n;
         std::vector<std::vector<Cost>> dp(size, std::vector<Cost>(_n, -1));
@@ -35,7 +35,9 @@ template <class Cost> struct tsp_graph {
             for(int i = 0; i < _n; ++i) {
                 if(!(bit >> i & 1) && g[pos][i] != _inf) {
                     Cost next = self(self, bit | (1 << i), i);
-                    if(next != _inf) {
+                    if(!return_s && next == 0 && i == s) {
+                        m = 0;
+                    } else if(next != _inf) {
                         m = std::min(m, next + g[pos][i]);
                     }
                 }
