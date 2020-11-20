@@ -1,3 +1,4 @@
 *.out
 main.cpp
 bundle.cpp
+.vscode
