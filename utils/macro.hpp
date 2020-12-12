@@ -36,3 +36,16 @@ void yesorno(bool flag) {
 template<typename T> T ceil_int(T A, T B) {
     return (A + (B - T(1))) / B;
 }
+vector<vector<char>> rps_winner_table() {
+    vector<vector<char>> t(300, vector<char>(300));
+
+    t['R']['R'] = t['R']['S'] = t['S']['R'] = 'R';
+    t['S']['S'] = t['S']['P'] = t['P']['S'] = 'S';
+    t['P']['P'] = t['P']['R'] = t['R']['P'] = 'P';
+
+    t['r']['r'] = t['r']['s'] = t['s']['r'] = 'r';
+    t['s']['s'] = t['s']['p'] = t['p']['s'] = 's';
+    t['p']['p'] = t['p']['r'] = t['r']['P'] = 'p';
+
+    return t;
+}
