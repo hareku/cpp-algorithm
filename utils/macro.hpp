@@ -10,6 +10,7 @@ using namespace std;
 template<typename T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; } return 0; }
 template<typename T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }
 typedef long long ll;
+typedef unsigned long long ull;
 typedef long double ld;
 typedef pair<int, int> PINT;
 typedef pair<long long, long long> PLL;
