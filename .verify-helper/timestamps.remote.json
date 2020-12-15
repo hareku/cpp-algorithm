@@ -17,6 +17,7 @@
 "test/math/prime_factorizer.test.cpp": "2020-10-11 07:33:02 +0900",
 "test/math/primes.test.cpp": "2020-10-11 07:33:15 +0900",
 "test/sequence/fenwick_tree.test.cpp": "2020-10-05 04:36:19 +0900",
+"test/sequence/lcs.test.cpp": "2020-12-15 09:05:17 +0000",
 "test/sequence/lis.test.cpp": "2020-10-05 04:36:12 +0900",
 "test/sort/bubbe_sort.test.cpp": "2020-10-21 12:07:53 +0000",
 "test/sort/insertion_sort.test.cpp": "2020-10-05 03:17:42 +0900",
