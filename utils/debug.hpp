@@ -14,6 +14,10 @@ string to_string(const string& s) {
     return '"' + s + '"';
 }
 
+string to_string(char c) {
+    return {c};
+}
+
 string to_string(const char* s) {
     return to_string((string) s);
 }
