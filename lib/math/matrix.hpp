@@ -1,5 +1,5 @@
-#ifndef LIB_MMTH_MMTRIX_HPP
-#define LIB_MMTH_MMTRIX_HPP 1
+#ifndef LIB_MATH_MMTRIX_HPP
+#define LIB_MATH_MMTRIX_HPP 1
 
 #include <bits/stdc++.h>
 
@@ -95,4 +95,4 @@ template <class T> struct Matrix {
 
 }    // namespace lib::math
 
-#endif    // LIB_MMTH_MMTRIX_HPP
+#endif    // LIB_MATH_MMTRIX_HPP
