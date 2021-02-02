@@ -23,4 +23,4 @@ std::vector<long long> enumerate_primes(long long n) {
 
 }  // namespace lib::math
 
-#endif  // LIB_MATH_PRIME_FACTORIZER_HPP
+#endif  // LIB_MATH_PRIMES_HPP
