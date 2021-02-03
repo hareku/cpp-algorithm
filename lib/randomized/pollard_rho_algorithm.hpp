@@ -58,7 +58,7 @@ std::vector<std::pair<long long, int>> pollard_rho_prime_factorization(long long
 
     factor(factor, n);
 
-    sort(primes.begin(), primes.end());
+    std::sort(primes.begin(), primes.end());
     for(auto p : primes) {
         if(!res.empty() && res.back().first == p) {
             res.back().second++;

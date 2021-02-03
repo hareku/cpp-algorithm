@@ -11,7 +11,7 @@ int main() {
 
     for(auto & p : res) {
         for(int i = 0; i < p.second; ++i) {
-            cout << " " << (long long) p.first;
+            cout << " " << p.first;
         }
     }
     cout << endl;
