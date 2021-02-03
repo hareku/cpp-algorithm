@@ -10,10 +10,13 @@ template <class Cost> struct kruskal_graph {
   public:
     kruskal_graph(int n) : _n(n) {}
 
-    void add_edge(int from, int to, Cost cost) {
+    void add_edge(int from, int to, Cost cost, bool bidirection = false) {
         assert(0 <= from && from < _n);
         assert(0 <= to && to < _n);
         edges.push_back(_edge{from, to, cost});
+        if(bidirection) {
+            edges.push_back(_edge{to, from, cost});
+        }
     }
 
     Cost kruskal() {

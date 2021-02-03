@@ -10,11 +10,14 @@ template <class Cost> struct dijkstra_graph {
     dijkstra_graph() : _n(0) {}
     dijkstra_graph(int n) : _n(n), g(n) {}
 
-    void add_edge(int from, int to, Cost cost) {
+    void add_edge(int from, int to, Cost cost, bool bidirection = false) {
         assert(0 <= from && from < _n);
         assert(0 <= to && to < _n);
         assert(0 <= cost);
         g[from].push_back(_edge{to, cost});
+        if(bidirection) {
+            g[to].push_back(_edge{from, cost});
+        }
     }
 
     std::pair<std::vector<Cost>, std::vector<int>> dijkstra(int s) {
