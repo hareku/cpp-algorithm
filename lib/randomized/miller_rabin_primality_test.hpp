@@ -30,7 +30,7 @@ bool miller_rabin_primality_test(long long n, int k = 20) {
 
     for(int ki = 0; ki < k; ++ki) {
         long long a = rand(engine);
-        long long x = lib::math::mod_pow(a, d, n);
+        long long x = lib::math::mod_pow_int128(a, d, n);
 
         if(x == 1 || x == n - 1) {
             continue;
@@ -38,7 +38,7 @@ bool miller_rabin_primality_test(long long n, int k = 20) {
 
         bool ok = 0;
         for (int r = 1; r <= s - 1; ++r) {
-            x = lib::math::mod_pow(x, 2, n);
+            x = lib::math::mod_pow_int128(x, 2, n);
             if(x == 1) {
                 return false;
             }
