@@ -1,19 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define rep(i,n) for (int i = 0; i < (int)(n); ++i)
-#define reps(i,s,n) for (int i = s; i < (int)(n); ++i)
-#define rep1(i,n) for (int i = 1; i <= (int)(n); ++i)
-#define per(i,n) for (int i = (int)(n) - 1; i >= 0; --i)
-#define all(c) begin(c),end(c)
-
-template<typename T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; } return 0; }
-template<typename T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }
 typedef long long ll;
 typedef unsigned long long ull;
 typedef long double ld;
 typedef pair<int, int> PINT;
 typedef pair<long long, long long> PLL;
+
+#define rep(i,n) for (ll i = 0; i < (ll)(n); ++i)
+#define reps(i,s,n) for (ll i = s; i < (ll)(n); ++i)
+#define rep1(i,n) for (ll i = 1; i <= (ll)(n); ++i)
+#define per(i,n) for (ll i = (ll)(n) - 1; i >= 0; --i)
+#define all(c) begin(c),end(c)
+
+template<typename T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; } return 0; }
+template<typename T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }
 void precout(int n = 20) { cout << std::fixed << std::setprecision(n); }
 #define print(a) cout << a << endl;
 const int INFI = (1 << 30) - 1;
