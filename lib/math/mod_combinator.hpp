@@ -31,6 +31,22 @@ struct mod_combinator {
         return fac[n] * (ifac[r] * ifac[n - r] % _mod) % _mod;
     }
 
+    // O(1)
+    long long nhr(long long n, long long r) {
+        assert(n + r - 1 <= _n);
+        assert(r <= _n);
+
+        return ncr(n + r - 1, r);
+    }
+
+    // O(1)
+    long long npr(long long n, long long r) {
+        assert(n <= _n);
+        assert(r <= _n);
+
+        return fac[n] * ifac[n-r] % _mod;
+    }
+
   private:
     int _n;
     long long _mod;
