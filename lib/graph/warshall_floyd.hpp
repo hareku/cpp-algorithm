@@ -22,7 +22,7 @@ template <class Cost> struct warshall_floyd_graph {
     }
 
     // warshall_floyd returns a pair.
-    // The first represents whether a cycle was detected or not.
+    // The first represents whether a cycle was NOT detected.
     // The second is a vector in vector, its [i][j] represents min cost between i and j.
     // If a min cost is equals inf(), it means to unable to reach from i to j.
     // This function's time complexity is O(N^3).
