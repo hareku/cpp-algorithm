@@ -24,6 +24,11 @@ template<typename T> void printv(vector<T>&v) {
     rep(i, n) cout << v[i] << " ";
     cout << v.back() << endl;
 }
+template<typename T> void printd(deque<T>&v) {
+    int n = v.size() - 1;
+    rep(i, n) cout << v[i] << " ";
+    cout << v.back() << endl;
+}
 const int dy[4] = { 0, 1, 0, -1 };
 const int dx[4] = { 1, 0, -1, 0 };
 const int dy8[8] = { 1, 1, 1, 0, 0, -1, -1, -1 };
@@ -37,6 +42,12 @@ void yesorno(bool flag) {
 template<typename T> T ceil_int(T A, T B) {
     return (A + (B - T(1))) / B;
 }
+long long powll(long long a, long long e) {
+    if(e == 0) return 1;
+    ll res = a;
+    rep(i,e-1) res *= a;
+    return res;
+}
 vector<vector<char>> rps_winner_table() {
     vector<vector<char>> t(300, vector<char>(300));
 
@@ -49,4 +60,10 @@ vector<vector<char>> rps_winner_table() {
     t['p']['p'] = t['p']['r'] = t['r']['P'] = 'p';
 
     return t;
+}
+template <class T> vector<vector<T>> makevv(int s1, int s2, T init) {
+    return vector<vector<T>>(s1, vector<T>(s2, init));
+}
+template <class T> vector<vector<vector<T>>> makevvv(int s1, int s2, int s3, T init) {
+    return vector<vector<vector<T>>>(s1, vector<vector<T>>(s2, vector<T>(s3, init)));
 }
