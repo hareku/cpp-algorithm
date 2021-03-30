@@ -18,6 +18,10 @@ string to_string(char c) {
     return {c};
 }
 
+string to_string(complex<double>& c) {
+    return "(" + to_string(c.real()) + "," + to_string(c.imag()) + ")";
+}
+
 string to_string(const char* s) {
     return to_string((string) s);
 }
