@@ -28,11 +28,10 @@ template <class T> bool on_same_line(std::complex<T> a, std::complex<T> b, std::
 
 // circumcenter returns the circumcenter of the given 3 points.
 // This function doesn't check whether 3 points are on a same line.
-// refs: https://examist.jp/mathematics/complex-plane/gaisin-fukusosuu/
 template <class T> std::complex<T> circumcenter(std::complex<T> a, std::complex<T> b, std::complex<T> c) {
-    std::complex<T> numerator = (a - c) * (norm(a) - norm(b)) - (a - b) * (norm(a) - norm(c));
-    std::complex<T> denominator = (conj(a) - conj(b)) * (a - c) - (conj(a) - conj(c)) * (a - b);
-    return numerator / denominator;
+    a -= c;
+    b -= c;
+    return (a * b * (conj(a) - conj(b))) / (conj(a) * b - a * conj(b)) + c;
 };
 
 // ccw returns a counter clock wise type.
