@@ -21,9 +21,9 @@ template <class T> std::complex<T> rotate(std::complex<T> a, T radian) {
 };
 
 // on_same_line checks whether 3 points are on a same line.
-template <class T> bool on_same_line(std::complex<T> a, std::complex<T> b, std::complex<T> c) {
+template <class T> bool on_same_line(std::complex<T> a, std::complex<T> b, std::complex<T> c, const T eps = std::numeric_limits<T>::epsilon()) {
     std::complex<T> d = (b - a) / (c - a);
-    return abs(d.imag()) < std::numeric_limits<T>::epsilon();
+    return abs(d.imag()) < eps;
 };
 
 // circumcenter returns the circumcenter of the given 3 points.
@@ -36,9 +36,7 @@ template <class T> std::complex<T> circumcenter(std::complex<T> a, std::complex<
 };
 
 // ccw returns a counter clock wise type.
-template <class T> int ccw(std::complex<T> a, std::complex<T> b, std::complex<T> c) {
-    const T eps = std::numeric_limits<T>::epsilon();
-
+template <class T> int ccw(std::complex<T> a, std::complex<T> b, std::complex<T> c, const T eps = std::numeric_limits<T>::epsilon()) {
     if(lib::geometry::cross(b - a, c - a) > eps) {
         return 1;
     }
