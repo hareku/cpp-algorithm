@@ -68,6 +68,15 @@ template <class T> std::complex<T> projection(std::complex<T> p, std::complex<T>
     return std::complex<T>(p.real(), 0) * p2 + p1;
 };
 
+// reflection returns the reflection point of "p" onto "p1","p2".
+template <class T> std::complex<T> reflection(std::complex<T> p, std::complex<T> p1, std::complex<T> p2) {
+    p -= p1;
+    p2 -= p1;
+
+    p /= p2;
+    return conj(p) * p2 + p1;
+};
+
 }  // namespace lib::geometry
 
 #endif  // LIB_GEOMETRY_UTILS
