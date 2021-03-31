@@ -18,7 +18,8 @@ string to_string(char c) {
     return {c};
 }
 
-string to_string(complex<double>& c) {
+template <class _T>
+string to_string(complex<_T>& c) {
     return "(" + to_string(c.real()) + "," + to_string(c.imag()) + ")";
 }
 
