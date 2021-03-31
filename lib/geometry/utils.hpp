@@ -59,6 +59,15 @@ template <class T> bool is_intersected(std::complex<T> a, std::complex<T> b, std
         && lib::geometry::ccw(c, d, a) * lib::geometry::ccw(c, d, b) <= 0;
 };
 
+// projection returns the projection point of "p" onto "p1","p2".
+template <class T> std::complex<T> projection(std::complex<T> p, std::complex<T> p1, std::complex<T> p2) {
+    p -= p1;
+    p2 -= p1;
+
+    p /= p2;
+    return std::complex<T>(p.real(), 0) * p2 + p1;
+};
+
 }  // namespace lib::geometry
 
 #endif  // LIB_GEOMETRY_UTILS
