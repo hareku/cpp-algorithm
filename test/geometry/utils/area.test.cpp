@@ -8,20 +8,14 @@ int main() {
     using P = complex<double>;
 
     int N; cin >> N;
-
-    auto read_p = []()->P {
-        int x,y; cin >> x >> y;
-        return P(x, y);
-    };
-
     vector<P> points(N);
 
     for(int i = 0; i < N; ++i) {
-        points[i] = read_p();
+        int x,y; cin >> x >> y;
+        points[i] = P(x, y);
     }
 
     double area = lib::geometry::area(points);
-
     cout << area << endl;
 
     return 0;
