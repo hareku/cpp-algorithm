@@ -127,6 +127,16 @@ template <class T> T distance_l2l(std::complex<T> a, std::complex<T> b, std::com
     );
 };
 
+// area returns the area of the given polygon.
+template <class T> T area(std::vector<std::complex<T>> ps) {
+    T area = 0;
+    int n = int(ps.size());
+    for(int i = 0; i < n; ++i) {
+        area += lib::geometry::cross(ps[i], ps[(i + 1) % n]);
+    }
+    return area / T{2};
+};
+
 }  // namespace lib::geometry
 
 #endif  // LIB_GEOMETRY_UTILS
