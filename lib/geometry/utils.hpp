@@ -202,6 +202,31 @@ template <class T> std::vector<std::complex<T>> convex_hull(std::vector<std::com
     return convex;
 };
 
+// diameter_convex_polygon returns the maximum diameter of convex polygon.
+// Time complexity is [N * log N].
+template <class T> T diameter_convex_polygon(const std::vector<std::complex<T>>& ps, const T eps = std::numeric_limits<T>::epsilon()) {
+    int n = ps.size();
+    auto cpm_y = [](const std::complex<T>& a, const std::complex<T>& b) {
+        return a.imag() != b.imag() ? a.imag() < b.imag() : a.real() < b.real();
+    };
+
+    int i = std::min_element(ps.begin(), ps.end(), cpm_y) - ps.begin();
+    int j = std::max_element(ps.begin(), ps.end(), cpm_y) - ps.begin();
+
+    T maxD = 0;
+    for(int _ = 0; _ < (n * 2); _++) {
+        if(maxD < abs(ps[i] - ps[j])) {
+            maxD = abs(ps[i] - ps[j]);
+        }
+        if(lib::geometry::cross(ps[i] - ps[(i+1) % n], ps[(j+1) % n] - ps[j]) < eps) {
+            j = (j+1) % n;
+        } else {
+            i = (i+1) % n;
+        }
+    }
+    return maxD;
+};
+
 }  // namespace lib::geometry
 
 #endif  // LIB_GEOMETRY_UTILS
