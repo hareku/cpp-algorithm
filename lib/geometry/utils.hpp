@@ -64,6 +64,22 @@ template <class T> bool is_intersected(std::complex<T> a, std::complex<T> b, std
         && lib::geometry::ccw(c, d, a) * lib::geometry::ccw(c, d, b) <= 0;
 };
 
+// is_parallel checks whether line "ab" and "cd" are parallel.
+template <class T> bool is_parallel(std::complex<T> a, std::complex<T> b, std::complex<T> c, std::complex<T> d, const T eps = std::numeric_limits<T>::epsilon()) {
+    std::complex<T> e = (b - a) / (d - c);
+    return std::abs(e.imag()) < eps;
+};
+
+// is_orthogonal checks whether line "ab" and "cd" are orthogonal.
+template <class T> bool is_orthogonal(std::complex<T> a, std::complex<T> b, std::complex<T> c, std::complex<T> d, const T eps = std::numeric_limits<T>::epsilon()) {
+    // if(! lib::geometry::is_intersected(a, b, c, d)) {
+    //     return false;
+    // }
+
+    std::complex<T> e = (d - c) / (b - a);
+    return std::abs(e.real()) < eps;
+};
+
 // projection returns the projection point of "p" onto "p1","p2".
 template <class T> std::complex<T> projection(std::complex<T> p, std::complex<T> p1, std::complex<T> p2) {
     p -= p1;
