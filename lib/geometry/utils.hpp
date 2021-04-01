@@ -150,6 +150,31 @@ template <class T> T is_convex(std::vector<std::complex<T>> points, const T eps 
     return true;
 };
 
+// in_polygon checks whether is the given "p" in the given polygon.
+// If "p" is on the polygon's line, return 1.
+// If "p" is in the polygon, return 2.
+// If "p" is not on the polygon, return 0.
+template <class T> int in_polygon(std::complex<T> p, const std::vector<std::complex<T>>& points, const T eps = std::numeric_limits<T>::epsilon()) {
+    int n = int(points.size());
+    bool in = 0;
+    for(int i = 0; i < n; ++i) {
+        std::complex<T> a = points[i] - p;
+        std::complex<T> b = points[(i + 1) % n] - p;
+
+        if(std::abs(lib::geometry::cross(a, b)) < eps && lib::geometry::dot(a, b) < eps) {
+            return 1;
+        }
+
+        if(a.imag() > b.imag()) {
+            std::swap(a, b);
+        }
+        if((a.imag() * b.imag() < eps && b.imag() > eps) && lib::geometry::cross(a, b) < eps) {
+            in = !in;
+        }
+    }
+    return in ? 2 : 0;
+};
+
 }  // namespace lib::geometry
 
 #endif  // LIB_GEOMETRY_UTILS
