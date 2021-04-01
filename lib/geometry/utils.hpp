@@ -76,6 +76,11 @@ template <class T> bool is_orthogonal(std::complex<T> a, std::complex<T> b, std:
     return std::abs(e.real()) < eps;
 };
 
+// crosspoint returns the cross point of "ab" and "cd".
+template <class T> std::complex<T> crosspoint(std::complex<T> a, std::complex<T> b, std::complex<T> c, std::complex<T> d) {
+    return a + std::complex<T>(lib::geometry::cross(a - c, d - c) / lib::geometry::cross(d - c, b - a), 0) * (b - a);
+};
+
 // projection returns the projection point of "p" onto "p1","p2".
 template <class T> std::complex<T> projection(std::complex<T> p, std::complex<T> p1, std::complex<T> p2) {
     p -= p1;
