@@ -138,6 +138,18 @@ template <class T> T area(std::vector<std::complex<T>> points) {
     return std::abs(area / T{2});
 };
 
+// is_convex checks whether is the given polygon convex.
+// The given points should be sorted counter-clockwise.
+template <class T> T is_convex(std::vector<std::complex<T>> points, const T eps = std::numeric_limits<T>::epsilon()) {
+    int n = int(points.size());
+    for(int i = 0; i < n; ++i) {
+        if(lib::geometry::cross(points[i] - points[(i + 2) % n], points[(i + 1) % n] - points[(i + 2) % n]) < -eps) {
+            return false;
+        }
+    }
+    return true;
+};
+
 }  // namespace lib::geometry
 
 #endif  // LIB_GEOMETRY_UTILS
