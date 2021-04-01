@@ -34,18 +34,23 @@ template <class T> std::complex<T> circumcenter(std::complex<T> a, std::complex<
     return (a * b * (conj(a) - conj(b))) / (conj(a) * b - a * conj(b)) + c;
 };
 
-// ccw returns a counter clock wise type.
-template <class T> int ccw(std::complex<T> a, std::complex<T> b, std::complex<T> c, const T eps = std::numeric_limits<T>::epsilon()) {
-    if(lib::geometry::cross(b - a, c - a) > eps) {
+// ccw returns a clockwise type.
+// type 1: if p2 is counter-clockwise from p1 centered on p0.
+// type -1: if p2 is clockwise from p1 centered on p0.
+// type 2: if p2 is opposite of p1 centered on p0.
+// type -2: if p1 and p2 are on the same line, and p2 is larger norm than p1.
+// type 0: if p1 and p2 are on the same line, and p1 is larger norm than p2.
+template <class T> int ccw(std::complex<T> p0, std::complex<T> p1, std::complex<T> p2, const T eps = std::numeric_limits<T>::epsilon()) {
+    if(lib::geometry::cross(p1 - p0, p2 - p0) > eps) {
         return 1;
     }
-    if(lib::geometry::cross(b - a, c - a) < -eps) {
+    if(lib::geometry::cross(p1 - p0, p2 - p0) < -eps) {
         return -1;
     }
-    if(lib::geometry::dot(b - a, c - a) < -eps) {
+    if(lib::geometry::dot(p1 - p0, p2 - p0) < -eps) {
         return 2;
     }
-    if(norm(b - a) + eps < norm(c - a)) {
+    if(norm(p1 - p0) + eps < norm(p2 - p0)) {
         return -2;
     }
     return 0;
