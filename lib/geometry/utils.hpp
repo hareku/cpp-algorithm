@@ -175,6 +175,32 @@ template <class T> int in_polygon(std::complex<T> p, const std::vector<std::comp
     return in ? 2 : 0;
 };
 
+// convex_hull returns the convex hull of the given points.
+// Time complexity is [N * log N].
+template <class T> std::vector<std::complex<T>> convex_hull(std::vector<std::complex<T>>& ps) {
+    // algorithm ref: https://en.wikipedia.org/wiki/Graham_scan
+
+    int n = int(ps.size());
+
+    auto cpm_y = [](std::complex<T>& a, std::complex<T>& b)->bool {
+        return a.imag() != b.imag() ? a.imag() < b.imag() : a.real() < b.real();
+    };
+    std::sort(ps.begin(), ps.end(), cpm_y);
+
+    int k = 0;
+    std::vector<std::complex<T>> convex(n * 2);
+    for(int i = 0; i < n; i++) {
+        while (k >= 2 && lib::geometry::ccw(convex[k - 2], convex[k - 1], ps[i]) == -1) k--;
+        convex[k++] = ps[i];
+    }
+    for(int i = n - 2, t = k; i >= 0; i--) {
+        while (k > t && lib::geometry::ccw(convex[k-2], convex[k-1], ps[i]) == -1) k--;
+        convex[k++] = ps[i];
+    }
+    convex.resize(k - 1);
+    return convex;
+};
+
 }  // namespace lib::geometry
 
 #endif  // LIB_GEOMETRY_UTILS
