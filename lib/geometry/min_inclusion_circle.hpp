@@ -8,7 +8,7 @@ namespace lib::geometry {
 
 // min_inclusion_circle returns a pair, its first is the center of a minimum inclusion circle,
 // and its second is circle's radius.
-template <class T> std::pair<std::complex<T>, T> min_inclusion_circle(std::vector<std::complex<T>> ps, const T eps = std::numeric_limits<T>::epsilon()) {
+template <class T> std::pair<std::complex<T>, T> min_inclusion_circle(const std::vector<std::complex<T>>& ps, const T eps = std::numeric_limits<T>::epsilon()) {
     int n = int(ps.size());
     std::pair<std::complex<T>, T> res;
     bool updated = 0; // flag for first updation.

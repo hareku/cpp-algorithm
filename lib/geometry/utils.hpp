@@ -129,7 +129,7 @@ template <class T> T distance_l2l(std::complex<T> a, std::complex<T> b, std::com
 
 // area returns the area of the given polygon.
 // The given points should be sorted clockwise or counter-clockwise.
-template <class T> T area(std::vector<std::complex<T>> points) {
+template <class T> T area(const std::vector<std::complex<T>>& points) {
     T area = 0;
     int n = int(points.size());
     for(int i = 0; i < n; ++i) {
@@ -140,7 +140,7 @@ template <class T> T area(std::vector<std::complex<T>> points) {
 
 // is_convex checks whether is the given polygon convex.
 // The given points should be sorted counter-clockwise.
-template <class T> T is_convex(std::vector<std::complex<T>> points, const T eps = std::numeric_limits<T>::epsilon()) {
+template <class T> T is_convex(const std::vector<std::complex<T>>& points, const T eps = std::numeric_limits<T>::epsilon()) {
     int n = int(points.size());
     for(int i = 0; i < n; ++i) {
         if(lib::geometry::cross(points[i] - points[(i + 2) % n], points[(i + 1) % n] - points[(i + 2) % n]) < -eps) {
