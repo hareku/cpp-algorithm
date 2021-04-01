@@ -99,6 +99,34 @@ template <class T> std::complex<T> reflection(std::complex<T> p, std::complex<T>
     return conj(p) * p2 + p1;
 };
 
+// distance_p2l returns the minimum distance of "p" to "ab".
+template <class T> T distance_p2l(std::complex<T> p, std::complex<T> a, std::complex<T> b, const T eps = std::numeric_limits<T>::epsilon()) {
+    // point to edges
+    T distance = std::min(std::abs(p - a), std::abs(p - b));
+
+    // point to projection point
+    {
+        auto prj = lib::geometry::projection(p, a, b);
+        if(lib::geometry::ccw(a, prj, b, eps) == -2) {
+            distance = std::min(distance, std::abs(p - prj));
+        }
+    }
+
+    return distance;
+};
+
+// distance_l2l returns the minimum distance between "ab" and "cd".
+template <class T> T distance_l2l(std::complex<T> a, std::complex<T> b, std::complex<T> c, std::complex<T> d, const T eps = std::numeric_limits<T>::epsilon()) {
+    if(lib::geometry::is_intersected(a, b, c, d)) {
+        return T{0};
+    }
+
+    return std::min<T>(
+        std::min(lib::geometry::distance_p2l(a, c, d, eps), lib::geometry::distance_p2l(b, c, d, eps)),
+        std::min(lib::geometry::distance_p2l(c, a, b, eps), lib::geometry::distance_p2l(d, a, b, eps))
+    );
+};
+
 }  // namespace lib::geometry
 
 #endif  // LIB_GEOMETRY_UTILS
