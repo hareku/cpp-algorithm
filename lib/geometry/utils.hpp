@@ -178,7 +178,8 @@ template <class T> int in_polygon(std::complex<T> p, const std::vector<std::comp
 // convex_hull returns the convex hull of the given points.
 // Time complexity is [N * log N].
 template <class T> std::vector<std::complex<T>> convex_hull(std::vector<std::complex<T>>& ps) {
-    // algorithm ref: https://en.wikipedia.org/wiki/Graham_scan
+    // algorithm is Andrew's Monotone Chain.
+    // ref: http://www.prefield.com/algorithm/geometry/convex_hull.html
 
     int n = int(ps.size());
 
@@ -194,7 +195,7 @@ template <class T> std::vector<std::complex<T>> convex_hull(std::vector<std::com
         convex[k++] = ps[i];
     }
     for(int i = n - 2, t = k; i >= 0; i--) {
-        while (k > t && lib::geometry::ccw(convex[k-2], convex[k-1], ps[i]) == -1) k--;
+        while (k > t && lib::geometry::ccw(convex[k - 2], convex[k - 1], ps[i]) == -1) k--;
         convex[k++] = ps[i];
     }
     convex.resize(k - 1);
