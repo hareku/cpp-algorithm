@@ -72,10 +72,6 @@ template <class T> bool is_parallel(std::complex<T> a, std::complex<T> b, std::c
 
 // is_orthogonal checks whether line "ab" and "cd" are orthogonal.
 template <class T> bool is_orthogonal(std::complex<T> a, std::complex<T> b, std::complex<T> c, std::complex<T> d, const T eps = std::numeric_limits<T>::epsilon()) {
-    // if(! lib::geometry::is_intersected(a, b, c, d)) {
-    //     return false;
-    // }
-
     std::complex<T> e = (d - c) / (b - a);
     return std::abs(e.real()) < eps;
 };
