@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     cout << std::fixed << std::setprecision(10);
-    using P = complex<long double>;
+    using P = complex<double>;
 
     auto read_p = []()->P {
         int x,y; cin >> x >> y;

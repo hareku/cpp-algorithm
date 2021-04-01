@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     cout << std::fixed << std::setprecision(10);
-    using P = complex<long double>;
+    using P = complex<double>;
 
     int x1,y1,x2,y2; cin >> x1 >> y1 >> x2 >> y2;
     P p1 = P(x1, y1), p2 = P(x2, y2);
