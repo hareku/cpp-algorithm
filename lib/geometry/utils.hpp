@@ -249,6 +249,48 @@ std::vector<std::complex<T>> cut_convex(const std::vector<std::complex<T>>& ps, 
     return res;
 };
 
+// closest_pair returns the distance of the closest pair.
+// Time complexity is [N * log N].
+template <class T> T closest_pair(std::vector<std::complex<T>>& ps) {
+    const T inf = std::numeric_limits<T>::max();
+    auto cmp_x = [](const std::complex<T>& a, const std::complex<T>& b) {
+        return a.real() != b.real() ? a.real() < b.real() : a.imag() < b.imag();
+    };
+    std::sort(ps.begin(), ps.end(), cmp_x);
+
+    auto cmp_y = [](const std::complex<T>& a, const std::complex<T>& b) {
+        return a.imag() != b.imag() ? a.imag() < b.imag() : a.real() < b.real();
+    };
+
+    auto f = [&](auto self, int l, int r)->T {
+        if(r - l <= 1) {
+            return inf;
+        }
+
+        int m = (l + r) / 2;
+        T x = ps[m].real();
+        T d = std::min<T>(self(self, l, m), self(self, m, r));
+        std::inplace_merge(std::begin(ps) + l, std::begin(ps) + m, std::begin(ps) + r, cmp_y);
+
+        std::vector<std::complex<T>> b;
+        for(int i = l; i < r; ++i) {
+            if(std::abs(ps[i].real() - x) >= d) continue;
+            int bn = (int) b.size();
+            for(int j = bn - 1; j >= 0; --j) {
+                T dx = ps[i].real() - b[j].real();
+                T dy = ps[i].imag() - b[j].imag();
+                if(dy >= d) break;
+                d = std::min<T>(d, std::sqrt(dx * dx + dy * dy));
+            }
+            b.push_back(ps[i]);
+        }
+
+        return d;
+    };
+
+    return f(f, 0, int(ps.size()));
+};
+
 }  // namespace lib::geometry
 
 #endif  // LIB_GEOMETRY_UTILS
