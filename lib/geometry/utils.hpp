@@ -130,8 +130,12 @@ template <class T> T distance_l2l(std::complex<T> a, std::complex<T> b, std::com
 // area returns the area of the given polygon.
 // The given points should be sorted clockwise or counter-clockwise.
 template <class T> T area(const std::vector<std::complex<T>>& points) {
-    T area = 0;
     int n = int(points.size());
+    if(n <= 1) {
+        return T{0};
+    }
+
+    T area = 0;
     for(int i = 0; i < n; ++i) {
         area += lib::geometry::cross(points[i], points[(i + 1) % n]);
     }
@@ -225,6 +229,24 @@ template <class T> T diameter_convex_polygon(const std::vector<std::complex<T>>&
         }
     }
     return maxD;
+};
+
+// cut_convex returns the cut polygon which is on the left-hand side of the line "ab".
+template <class T>
+std::vector<std::complex<T>> cut_convex(const std::vector<std::complex<T>>& ps, std::complex<T> a, std::complex<T> b) {
+    std::vector<std::complex<T>> res;
+    int n = (int) ps.size();
+
+    for(int i = 0; i < n; ++i) {
+        if(lib::geometry::ccw(a, b, ps[i]) != -1) {
+            res.push_back(ps[i]);
+        }
+        if(lib::geometry::ccw(a, b, ps[i]) * lib::geometry::ccw(a, b, ps[(i + 1) % n]) == -1) {
+            res.push_back(lib::geometry::crosspoint(a, b, ps[i], ps[(i + 1) % n]));
+        }
+    }
+
+    return res;
 };
 
 }  // namespace lib::geometry
