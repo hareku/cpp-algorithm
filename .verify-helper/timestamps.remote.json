@@ -8,6 +8,7 @@
 "test/geometry/utils/diameter_convex_polygon.test.cpp": "2021-04-02 23:45:40 +0000",
 "test/geometry/utils/distance.test.cpp": "2021-04-02 23:45:40 +0000",
 "test/geometry/utils/in_polygon.test.cpp": "2021-04-02 23:45:40 +0000",
+"test/geometry/utils/intersections.test.cpp": "2021-04-06 01:04:55 +0000",
 "test/geometry/utils/is_convex.test.cpp": "2021-04-02 23:45:40 +0000",
 "test/geometry/utils/is_intersected.test.cpp": "2021-04-02 23:45:40 +0000",
 "test/geometry/utils/parallel_orthogonal.test.cpp": "2021-04-02 23:45:40 +0000",
