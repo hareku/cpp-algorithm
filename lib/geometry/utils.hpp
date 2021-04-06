@@ -34,6 +34,15 @@ template <class T> std::complex<T> circumcenter(std::complex<T> a, std::complex<
     return (a * b * (conj(a) - conj(b))) / (conj(a) * b - a * conj(b)) + c;
 };
 
+// innercenter returns the inner center of the given 3 points.
+// This function doesn't check whether 3 points are on a same line.
+template <class T> std::complex<T> innercenter(std::complex<T> a, std::complex<T> b, std::complex<T> c) {
+    a -= c;
+    b -= c;
+    std::complex<T> z = (a * std::complex<T>(std::abs(b), 0) + b * std::complex<T>(std::abs(a), 0)) / std::complex<T>(std::abs(a) + std::abs(b) + std::abs(b - a), 0);
+    return z + c;
+};
+
 // ccw returns a clockwise type.
 // type 1: if p2 is counter-clockwise from p1 centered on p0.
 // type -1: if p2 is clockwise from p1 centered on p0.
