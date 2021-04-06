@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_6_A"
 #include <bits/stdc++.h>
-#include "../../../lib/geometry/intersections.hpp"
+#include "../../lib/geometry/intersections.hpp"
 using namespace std;
 
 int main() {

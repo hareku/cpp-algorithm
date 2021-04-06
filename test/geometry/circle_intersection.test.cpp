@@ -1,7 +1,7 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_A"
 #define ERROR "1e-6"
 #include <bits/stdc++.h>
-#include "../../../lib/geometry/circle_intersection.hpp"
+#include "../../lib/geometry/circle_intersection.hpp"
 using namespace std;
 
 int main() {
