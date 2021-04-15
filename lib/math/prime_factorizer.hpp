@@ -19,7 +19,7 @@ struct prime_factorizer {
         std::vector<std::pair<long long, int>> res;
 
         for(long long p : primes) {
-            if(p > x) break;
+            if(p * p > x) break;
             if (x % p != 0) continue;
 
             int ex = 0;
@@ -45,7 +45,7 @@ struct prime_factorizer {
         for (long long a = 2; a <= _n; ++a) {
             if(!is_p[a]) continue;
 
-            primes.insert(a);
+            primes.push_back(a);
             for(long long m = a * 2; m <= _n; m += a) {
                 is_p[m] = false;
             }
@@ -53,7 +53,7 @@ struct prime_factorizer {
     }
 
     long long _n;
-    std::set<long long> primes;
+    std::vector<long long> primes;
     std::vector<bool> is_p;
 };
 
