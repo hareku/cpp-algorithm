@@ -15,7 +15,11 @@ struct bipartite_detection_graph {
         g[from].push_back(_edge{to});
     }
 
-    bool is_bipartite() {
+    // is_bipartite detects whether the given graph is bipartite.
+    // About the returned pair, first is whether the given graph is bipartite,
+    // and second represents colors of each edge.
+    // Time complexity is O(N).
+    std::pair<bool, std::vector<bool>> is_bipartite() {
         std::vector<bool> seen(_n, false);
         std::vector<bool> evenodd(_n);
 
@@ -37,7 +41,7 @@ struct bipartite_detection_graph {
             return true;
         };
 
-        return dfs(dfs, 0, false);
+        return std::make_pair(dfs(dfs, 0, false), evenodd);
     }
 
   private:
