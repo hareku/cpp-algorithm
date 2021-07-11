@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 #include <bits/stdc++.h>
-#include "../../lib/graph/lca.hpp"
+#include "../../lib/graph/lca_tree.hpp"
 using namespace std;
 
 int main() {
