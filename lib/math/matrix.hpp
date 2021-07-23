@@ -5,13 +5,13 @@
 
 namespace lib::math {
 
-template <class T> struct Matrix {
+template <class T> struct matrix {
   public:
     std::vector<std::vector<T>> M;
 
-    Matrix() {}
-    Matrix(int n, int m) : M(n, std::vector<T>(m, 0)) {}
-    Matrix(int n) : M(n, std::vector<T>(n, 0)) {};
+    matrix() {}
+    matrix(int n, int m) : M(n, std::vector<T>(m, 0)) {}
+    matrix(int n) : M(n, std::vector<T>(n, 0)) {};
 
     int height() const {
         return (int) M.size();
@@ -29,13 +29,13 @@ template <class T> struct Matrix {
         return (M.at(k));
     }
 
-    static Matrix I(int n) {
-        Matrix mat(n);
+    static matrix I(int n) {
+        matrix mat(n);
         for(int i = 0; i < n; i++) mat[i][i] = 1;
         return (mat);
     }
 
-    Matrix &operator+=(const Matrix &B) {
+    matrix &operator+=(const matrix &B) {
         int n = height(), m = width();
         assert(n == B.height() && m == B.width());
         for(int i = 0; i < n; i++)
@@ -44,7 +44,7 @@ template <class T> struct Matrix {
         return (*this);
     }
 
-    Matrix &operator-=(const Matrix &B) {
+    matrix &operator-=(const matrix &B) {
         int n = height(), m = width();
         assert(n == B.height() && m == B.width());
         for(int i = 0; i < n; i++)
@@ -53,7 +53,7 @@ template <class T> struct Matrix {
         return (*this);
     }
 
-    Matrix &operator*=(const Matrix &B) {
+    matrix &operator*=(const matrix &B) {
         int n = height(), m = B.width(), p = width();
         assert(p == B.height());
         std::vector< std::vector<T> > C(n, std::vector<T>(m, 0));
@@ -65,8 +65,8 @@ template <class T> struct Matrix {
         return (*this);
     }
 
-    Matrix &operator^=(long long k) {
-        Matrix B = Matrix::I(height());
+    matrix &operator^=(long long k) {
+        matrix B = matrix::I(height());
         while(k > 0) {
             if(k & 1) B *= *this;
             *this *= *this;
@@ -76,20 +76,20 @@ template <class T> struct Matrix {
         return (*this);
     }
 
-    Matrix operator+(const Matrix &B) const {
-        return (Matrix(*this) += B);
+    matrix operator+(const matrix &B) const {
+        return (matrix(*this) += B);
     }
 
-    Matrix operator-(const Matrix &B) const {
-        return (Matrix(*this) -= B);
+    matrix operator-(const matrix &B) const {
+        return (matrix(*this) -= B);
     }
 
-    Matrix operator*(const Matrix &B) const {
-        return (Matrix(*this) *= B);
+    matrix operator*(const matrix &B) const {
+        return (matrix(*this) *= B);
     }
 
-    Matrix operator^(const long long k) const {
-        return (Matrix(*this) ^= k);
+    matrix operator^(const long long k) const {
+        return (matrix(*this) ^= k);
     }
 };
 

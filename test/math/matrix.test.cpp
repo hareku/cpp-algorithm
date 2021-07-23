@@ -6,7 +6,7 @@ using namespace std;
 int main() {
     int N,M,L; cin >> N >> M >> L;
 
-    lib::math::Matrix<long long> A(N, M), B(M, L);
+    lib::math::matrix<long long> A(N, M), B(M, L);
 
     for(int i = 0; i < N; ++i) {
         for(int j = 0; j < M; ++j) {
