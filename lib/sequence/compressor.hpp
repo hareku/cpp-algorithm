@@ -9,13 +9,15 @@ namespace lib::sequence {
 template <class T> struct compressor {
   public:
     void add(T x) {
-        data.insert(x);
+        data.push_back(x);
     }
 
     std::unordered_map<T, int> compress() {
+        std::sort(data.begin(), data.end());
+
         int id = 0;
         std::unordered_map<T, int> val2key;
-        for(auto& v : data) {
+        for(auto v : data) {
             val2key[v] = id;
             ++id;
         }
@@ -23,7 +25,7 @@ template <class T> struct compressor {
     }
 
   private:
-    std::set<T> data;
+    std::vector<T> data;
 };
 
 }  // namespace lib::sequence
