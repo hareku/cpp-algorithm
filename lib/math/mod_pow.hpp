@@ -8,13 +8,10 @@ namespace lib::math {
 // a^n mod(m)
 // O(log{2} n)
 long long mod_pow(long long a, long long n, long long m) {
-    assert(0 <= n);
-    assert(1 <= m);
+    a %= m;
     long long res = 1;
-    while (n > 0) {
-        if (n & 1) {
-            res = res * a % m;
-        }
+    while (n != 0) {
+        if (n & 1) res = res * a % m;
         a = a * a % m;
         n >>= 1;
     }
