@@ -22,6 +22,14 @@ template <class T> struct compressor {
         return val2key;
     }
 
+    std::unordered_map<int, T> reverse(std::unordered_map<T, int>& val2key) {
+        std::unordered_map<int, T> key2val;
+        for(auto& v : val2key) {
+            key2val[v.second] = v.first;
+        }
+        return key2val;
+    }
+
   private:
     std::set<T> data;
 };
