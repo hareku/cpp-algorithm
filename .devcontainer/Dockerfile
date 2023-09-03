@@ -1,17 +1,13 @@
-# [Choice] Debian / Ubuntu version: debian-10, debian-9
-ARG VARIANT=buster
-FROM mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
+# [Choice] Debian / Ubuntu version (use Debian 11, Ubuntu 18.04/22.04 on local arm64/Apple Silicon): debian-11, debian-10, ubuntu-22.04, ubuntu-20.04, ubuntu-18.04
+ARG VARIANT=debian-11
+FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
 
-# Install needed packages. Use a separate RUN statement to add your own dependencies.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install build-essential cmake cppcheck valgrind clang lldb llvm \
-    && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+    && apt-get -y install --no-install-recommends \
+        # oj-verify
+        curl python3-distutils
 
-# [Optional] Uncomment this section to install additional OS packages.
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends curl python3-distutils
-
-# Install pip3 and tools
+# oj-verify
 RUN curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py \
     && python3 /tmp/get-pip.py \
     && rm -f /tmp/get-pip.py \
