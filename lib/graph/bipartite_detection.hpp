@@ -9,10 +9,13 @@ struct bipartite_detection_graph {
   public:
     bipartite_detection_graph(int n) : _n(n), g(n) {}
 
-    void add_edge(int from, int to) {
+    void add_edge(int from, int to, bool bidirection = false) {
         assert(0 <= from && from < _n);
         assert(0 <= to && to < _n);
         g[from].push_back(_edge{to});
+        if(bidirection) {
+            g[to].push_back(_edge{from});
+        }
     }
 
     // is_bipartite detects whether the given graph is bipartite.
@@ -33,15 +36,23 @@ struct bipartite_detection_graph {
                 }
 
                 if(!seen[e.to]) {
-                    bool flag = self(self, e.to, !odd);
-                    if(!flag) return false;
+                    bool ok = self(self, e.to, !odd);
+                    if(!ok) return false;
                 }
             }
 
             return true;
         };
 
-        return std::make_pair(dfs(dfs, 0, false), evenodd);
+        bool ok = true;
+        for(int i = 0; i < _n; i++) {
+            if(seen[i]) continue;
+            if(!dfs(dfs, i, false)) {
+                ok = false;
+                break;
+            }
+        }
+        return std::make_pair(ok, evenodd);
     }
 
   private:
