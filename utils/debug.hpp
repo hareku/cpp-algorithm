@@ -28,7 +28,7 @@ string to_string(const char* s) {
 }
 
 string to_string(bool b) {
-    return (b ? "true" : "false");
+    return (b ? "T" : "F");
 }
 
 string to_string(vector<bool> v) {

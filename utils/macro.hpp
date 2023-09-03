@@ -20,11 +20,13 @@ void precout(int n = 20) { cout << std::fixed << std::setprecision(n); }
 const int INFI = (1 << 30) - 1;
 const long long INFLL = (1LL << 62) - 1;
 template<typename T> void printv(vector<T>&v) {
+    if(v.size() == 0) return;
     int n = v.size() - 1;
     rep(i, n) cout << v[i] << " ";
     cout << v.back() << endl;
 }
 template<typename T> void printd(deque<T>&v) {
+    if(v.size() == 0) return;
     int n = v.size() - 1;
     rep(i, n) cout << v[i] << " ";
     cout << v.back() << endl;
