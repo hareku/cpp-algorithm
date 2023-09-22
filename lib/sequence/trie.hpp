@@ -21,11 +21,11 @@ class Trie {
         }
 
         bool search(std::string& word) {
-            return searchTrie(word, 0, root, true);
+            return search_trie(word, 0, root, true);
         }
 
-        bool startsWith(std::string& prefix) {
-            return searchTrie(prefix, 0, root, false);
+        bool starts_with(std::string& prefix) {
+            return search_trie(prefix, 0, root, false);
         }
 
     private:
@@ -47,8 +47,8 @@ class Trie {
 
         TrieNode* root = new TrieNode();
 
-        bool searchTrie(const std::string& word, int pos, TrieNode* node, bool exact) {
-            if(pos == word.size()) {
+        bool search_trie(const std::string& word, int pos, TrieNode* node, bool exact) {
+            if(pos == (int)word.size()) {
                 if(exact) {
                     return node->isLeaf;
                 }
@@ -57,7 +57,7 @@ class Trie {
 
             TrieNode* next = node->get(word[pos]);
             if(next) {
-                return searchTrie(word, pos + 1, next, exact);
+                return search_trie(word, pos + 1, next, exact);
             }
             return false;
         }
