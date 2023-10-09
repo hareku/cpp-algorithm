@@ -11,7 +11,8 @@ template <class T> struct matrix {
 
     matrix() {}
     matrix(int n, int m) : M(n, std::vector<T>(m, 0)) {}
-    matrix(int n) : M(n, std::vector<T>(n, 0)) {};
+    matrix(int n) : M(n, std::vector<T>(n, 0)) {}
+    matrix(std::vector<std::vector<T>> m) : M(m) {}
 
     int height() const {
         return (int) M.size();
