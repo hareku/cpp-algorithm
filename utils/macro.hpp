@@ -39,7 +39,7 @@ const int dy8[8] = { 1, 1, 1, 0, 0, -1, -1, -1 };
 const int dx8[8] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 double deg2rad(double deg) { return deg * M_PI / 180; }
 double rad2deg(double rad) { return rad * 180 / M_PI; }
-void yesorno(bool flag) {
+void yorn(bool flag) {
     if(flag) print("Yes")
     else print("No");
 }
