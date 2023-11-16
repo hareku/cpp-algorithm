@@ -65,9 +65,18 @@ vector<vector<char>> rps_winner_table() {
 
     return t;
 }
-template <class T> vector<vector<T>> makevv(int s1, int s2, T init) {
+template <class T> vector<vector<T>> makevv(int s1, int s2, T init = T()) {
     return vector<vector<T>>(s1, vector<T>(s2, init));
 }
-template <class T> vector<vector<vector<T>>> makevvv(int s1, int s2, int s3, T init) {
+template <class T> vector<vector<vector<T>>> makevvv(int s1, int s2, int s3, T init = T()) {
     return vector<vector<vector<T>>>(s1, vector<vector<T>>(s2, vector<T>(s3, init)));
+}
+pair<vector<int>,vector<int>> cin_edges(int n, int delta = 1) {
+    vector<int> U(n),V(n);
+    rep(i,n) {
+        cin>>U[i]>>V[i];
+        U[i] -= delta;
+        V[i] -= delta;
+    }
+    return {U,V};
 }
