@@ -16,8 +16,9 @@ class Trie {
                     node->set(c);
                 }
                 node = node->get(c);
+                node->cnt++;
             }
-            node->isLeaf = true;
+            node->leafCnt++;
         }
 
         bool search(std::string& word) {
@@ -31,11 +32,12 @@ class Trie {
     private:
         class TrieNode {
         public:
-            bool isLeaf;
+            long long leafCnt, cnt;
             TrieNode* children[26];
             TrieNode() {
-                isLeaf = 0;
-                memset(children, NULL, sizeof(children));
+                leafCnt = 0;
+                cnt = 0;
+                memset(children, 0, sizeof(children));
             }
             TrieNode* get(char c) {
                 return children[c - 'a'];
@@ -50,7 +52,7 @@ class Trie {
         bool search_trie(const std::string& word, int pos, TrieNode* node, bool exact) {
             if(pos == (int)word.size()) {
                 if(exact) {
-                    return node->isLeaf;
+                    return node->leafCnt > 0;
                 }
                 return true;
             }
