@@ -115,7 +115,7 @@ struct all_cycle_detection_graph {
             if(cycle.size() == 0) {
                 continue;
             }
-            vector<int> normalized;
+            std::vector<int> normalized;
             for(int i : cycle) {
                 normalized.push_back(i2v[i]);
             }
