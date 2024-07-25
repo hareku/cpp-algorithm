@@ -19,7 +19,6 @@
 "test/geometry/utils/reflection.test.cpp": "2021-04-06 04:10:11 +0000",
 "test/graph/bellman_ford.test.cpp": "2020-10-02 06:59:30 +0900",
 "test/graph/bipartite_matching.test.cpp": "2020-10-04 06:26:04 +0900",
-"test/graph/cycle_detection.test.cpp": "2020-10-02 06:59:30 +0900",
 "test/graph/dijkstra.test.cpp": "2021-02-03 22:58:19 +0000",
 "test/graph/kruskal.test.cpp": "2021-02-03 22:58:19 +0000",
 "test/graph/lca_tree.test.cpp": "2021-07-11 14:49:54 +0000",
