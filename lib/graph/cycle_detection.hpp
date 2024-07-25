@@ -2,12 +2,13 @@
 #define LIB_GRAPH_CYCLE_DETECTION_HPP 1
 
 #include <bits/stdc++.h>
+#include "./unionfind.hpp"
+#include "../sequence/compressor.hpp"
 
 namespace lib::graph {
 
 struct cycle_detection_graph {
   public:
-    cycle_detection_graph() : _n(0) {}
     cycle_detection_graph(int n) : _n(n), g(n) {}
 
     void add_edge(int from, int to) {
@@ -63,6 +64,65 @@ struct cycle_detection_graph {
         }
 
         return {};
+    }
+
+  private:
+    int _n;
+    struct _edge {
+        int to;
+    };
+    std::vector<std::vector<_edge>> g;
+};
+
+struct all_cycle_detection_graph {
+  public:
+    all_cycle_detection_graph(int n) : _n(n), g(n) {}
+
+    void add_edge(int from, int to) {
+        assert(0 <= from && from < _n);
+        assert(0 <= to && to < _n);
+        g[from].push_back(_edge{to});
+    }
+
+    std::vector<std::vector<int>> all_cycles() {
+        lib::graph::unionfind uf(_n);
+        for(int i = 0; i < _n; i++) {
+            for(_edge& e : g[i]) {
+                uf.merge(i, e.to);
+            }
+        }
+
+        std::vector<std::vector<int>> cycles;
+
+        for(std::vector<int>& group : uf.groups()) {
+            lib::sequence::compressor<int> cmp;
+            for(int i : group) {
+                cmp.add(i);
+            }
+
+            int m = (int) group.size();
+            cycle_detection_graph cg(m);
+
+            std::unordered_map<int, int> v2i = cmp.compress();
+            std::unordered_map<int, int> i2v = cmp.reverse(v2i);
+            for(int i : group) {
+                for(_edge& e : g[i]) {
+                    cg.add_edge(v2i[i], v2i[e.to]);
+                }
+            }
+
+            auto cycle = cg.detect();
+            if(cycle.size() == 0) {
+                continue;
+            }
+            vector<int> normalized;
+            for(int i : cycle) {
+                normalized.push_back(i2v[i]);
+            }
+            cycles.push_back(normalized);
+        }
+
+        return cycles;
     }
 
   private:
