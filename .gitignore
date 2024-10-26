@@ -4,3 +4,5 @@ bundle.cpp
 tmp.cpp
 .vscode
 backup
+
+test/sample-*
