@@ -8,9 +8,9 @@ bundle.cpp: FORCE
 	oj-bundle main.cpp >| bundle.cpp
 
 ojd:
-	rm test/sample-*
+	-rm test/sample-*in test/sample-*out
 	oj download $(URL)
 
 .DEFAULT_GOAL := oj
 oj: main
-	oj test
+	oj test --tle 3
