@@ -80,3 +80,10 @@ pair<vector<int>,vector<int>> cin_edges(int n, int delta = 1) {
     }
     return {U,V};
 }
+
+template <typename T1, typename T2>
+struct compare_first {
+    bool operator()(const std::pair<T1, T2>& a, const std::pair<T1, T2>& b) const {
+        return a.first < b.first;
+    }
+};
