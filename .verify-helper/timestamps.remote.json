@@ -24,6 +24,7 @@
 "test/graph/kruskal.test.cpp": "2021-02-03 22:58:19 +0000",
 "test/graph/lca_tree.test.cpp": "2021-07-11 14:49:54 +0000",
 "test/graph/maxflow.test.cpp": "2020-10-02 06:59:30 +0900",
+"test/graph/rerooting.test.cpp": "2025-08-07 13:42:10 +0900",
 "test/graph/traveling_salesman.test.cpp": "2021-01-30 17:06:07 +0000",
 "test/graph/tree_diameter.test.cpp": "2020-10-02 06:59:30 +0900",
 "test/graph/unionfind.test.cpp": "2020-10-02 06:59:30 +0900",
