@@ -18,6 +18,8 @@ struct mod_combinator {
 
         ifac[n] = inv(fac[n]);
         for (long long i = n; i >= 1; --i) {
+            // (i-1)! = (i!)/i
+            // -> {(i-1)!}^-1 = (i!)^-1 * i
             ifac[i - 1] = ifac[i] * i % mod;
         }
     }
