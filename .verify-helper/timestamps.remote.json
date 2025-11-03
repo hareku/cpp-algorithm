@@ -33,7 +33,7 @@
 "test/math/extended_euclidean.test.cpp": "2021-02-04 18:34:06 +0000",
 "test/math/lcm.test.cpp": "2020-10-05 04:48:16 +0900",
 "test/math/matrix.test.cpp": "2023-10-09 12:40:29 +0900",
-"test/math/mod_combinator.test.cpp": "2021-03-03 10:01:34 +0000",
+"test/math/mod_combinator.test.cpp": "2025-11-03 13:27:00 +0900",
 "test/math/mod_pow.test.cpp": "2021-12-06 12:08:39 +0000",
 "test/math/prime_factorization.test.cpp": "2020-10-02 06:59:30 +0900",
 "test/math/prime_factorizer.test.cpp": "2021-04-15 16:24:57 +0000",
@@ -48,5 +48,6 @@
 "test/sort/bubbe_sort.test.cpp": "2020-10-21 12:07:53 +0000",
 "test/sort/insertion_sort.test.cpp": "2020-10-05 03:17:42 +0900",
 "test/sort/selection_sort.test.cpp": "2020-10-05 03:17:42 +0900",
+"test/string/kmp.test.cpp": "2025-11-03 13:26:12 +0900",
 "test/string/z_algorithm.test.cpp": "2020-10-05 09:12:19 +0900"
 }
